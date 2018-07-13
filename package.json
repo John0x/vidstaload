@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "stencil build",
     "build:prod": "stencil build --prerender",
     "dev": "stencil build --dev --watch --serve",
     "devWithSW": "stencil build --dev --service-worker --watch --serve",
