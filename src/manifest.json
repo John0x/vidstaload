@@ -1,6 +1,6 @@
 {
-  "name": "Ionic PWA Toolkit",
-  "short_name": "Ionic PWA",
+  "name": "Vidstaload",
+  "short_name": "Vidstaload",
   "start_url": "/",
   "display": "standalone",
   "icons": [{
