@@ -12,6 +12,6 @@ exports.config = {
   globalScript: 'src/global/app.ts',
   globalStyle: 'src/global/app.css',
   copy: [
-    { src: '_headers' }
+    { src: 'robots.txt' }
   ]
 };
