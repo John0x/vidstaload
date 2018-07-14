@@ -1,4 +1,5 @@
 // https://stenciljs.com/docs/config
+const sass = require('@stencil/sass');
 
 exports.config = {
   outputTargets: [
@@ -13,5 +14,8 @@ exports.config = {
   globalStyle: 'src/global/app.css',
   copy: [
     { src: 'robots.txt' }
+  ],
+  plugins: [
+    sass()
   ]
 };
