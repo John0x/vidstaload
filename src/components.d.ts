@@ -127,4 +127,37 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface InstaSearchbar {
+
+    }
+  }
+
+  interface HTMLInstaSearchbarElement extends StencilComponents.InstaSearchbar, HTMLStencilElement {}
+
+  var HTMLInstaSearchbarElement: {
+    prototype: HTMLInstaSearchbarElement;
+    new (): HTMLInstaSearchbarElement;
+  };
+  interface HTMLElementTagNameMap {
+    'insta-searchbar': HTMLInstaSearchbarElement;
+  }
+  interface ElementTagNameMap {
+    'insta-searchbar': HTMLInstaSearchbarElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'insta-searchbar': JSXElements.InstaSearchbarAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface InstaSearchbarAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
