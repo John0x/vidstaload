@@ -9,7 +9,7 @@ export class InstaSearchbar {
   render() {
     return (
       <div>
-        <p>Hello InstaSearchbar!</p>
+        <ion-searchbar placeholder="Insert url" type="url" />
       </div>
     );
   }
