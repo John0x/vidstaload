@@ -1,5 +1,7 @@
 // https://stenciljs.com/docs/config
 const sass = require('@stencil/sass');
+const postcss = require('@stencil/postcss');
+const autoprefixer = require('autoprefixer');
 
 exports.config = {
   outputTargets: [
@@ -11,11 +13,17 @@ exports.config = {
     }
   ],
   globalScript: 'src/global/app.ts',
-  globalStyle: 'src/global/app.css',
-  copy: [
-    { src: 'robots.txt' }
-  ],
+  globalStyle: 'src/global/app.pcss',
+  copy: [{ src: 'robots.txt' }],
   plugins: [
-    sass()
+    postcss({
+      plugins: [
+        autoprefixer({
+          browsers: ['last 6 versions'],
+          cascade: false
+        }),
+        require('postcss-nested')
+      ]
+    })
   ]
 };

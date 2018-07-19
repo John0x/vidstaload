@@ -5,7 +5,7 @@ import NProgress from 'nprogress';
 
 @Component({
   tag: 'app-root',
-  styleUrl: 'app-root.scss'
+  styleUrl: 'app-root.pcss'
 })
 export class AppRoot {
   @Prop({ connect: 'ion-toast-controller' })
