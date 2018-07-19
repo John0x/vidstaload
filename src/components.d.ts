@@ -155,7 +155,7 @@ declare global {
   }
   namespace JSXElements {
     export interface InstaSearchbarAttributes extends HTMLAttributes {
-
+      'onPressedEnter'?: (event: CustomEvent<string>) => void;
     }
   }
 }

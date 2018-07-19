@@ -5,13 +5,17 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-home.pcss',
 })
 export class AppHome {
+  onSearchbarPressedEnter(event: CustomEvent) {
+    console.log(event);
+  }
+  
   render() {
     return (
       <div class="full-height full-width full-center">
         <ion-grid no-margin style={{ width: "90%" }}>
           <ion-row>
             <div style={{ height: "40px", width: "100%"}}>
-              <insta-searchbar />
+              <insta-searchbar onPressedEnter={ev => this.onSearchbarPressedEnter(ev)} />
             </div>
           </ion-row>
         </ion-grid>
