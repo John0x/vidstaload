@@ -127,4 +127,71 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface InstaButton {
+
+    }
+  }
+
+  interface HTMLInstaButtonElement extends StencilComponents.InstaButton, HTMLStencilElement {}
+
+  var HTMLInstaButtonElement: {
+    prototype: HTMLInstaButtonElement;
+    new (): HTMLInstaButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    'insta-button': HTMLInstaButtonElement;
+  }
+  interface ElementTagNameMap {
+    'insta-button': HTMLInstaButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'insta-button': JSXElements.InstaButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface InstaButtonAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface InstaSearchbar {
+
+    }
+  }
+
+  interface HTMLInstaSearchbarElement extends StencilComponents.InstaSearchbar, HTMLStencilElement {}
+
+  var HTMLInstaSearchbarElement: {
+    prototype: HTMLInstaSearchbarElement;
+    new (): HTMLInstaSearchbarElement;
+  };
+  interface HTMLElementTagNameMap {
+    'insta-searchbar': HTMLInstaSearchbarElement;
+  }
+  interface ElementTagNameMap {
+    'insta-searchbar': HTMLInstaSearchbarElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'insta-searchbar': JSXElements.InstaSearchbarAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface InstaSearchbarAttributes extends HTMLAttributes {
+      'onChange'?: (event: CustomEvent<string>) => void;
+      'onPressedEnter'?: (event: CustomEvent<string>) => void;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }

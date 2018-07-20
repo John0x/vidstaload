@@ -1,42 +1,116 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Vidstaload</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Download instagram videos">
-    <meta name="theme-color" content="#16161d">
+<head>
+  <meta charset="utf-8">
+  <title>Vidstaload - Download instagram videos and photos</title>
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Vidstaload">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download instagram videos and photos for free and with just one click!">
+  <meta name="keywords" content="instagram,download,videos,photos,video,photo,insta,herunterladen,laden,load,tool,online,download instagram videos,instagram videos herunterladen,Instagram Video download, Instagram Video Downloader, Instagram Videos speichern">
+  <meta name="language" content="English">
+  <meta name="theme-color" content="#16161d">
 
-    <meta http-equiv="x-ua-compatible" content="IE=Edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Vidstaload">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link href="/build/app.css" rel="stylesheet">
-    <script src="/build/app.js"></script>
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
 
-    <!-- nprogress -->
-    <link rel='stylesheet' href='/assets/css/nprogress.css' />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link rel="apple-touch-icon" href="/assets/icon/icon.png">
-    <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
-    <link rel="manifest" href="/manifest.json">
+  <!-- og meta -->
+  <meta property="og:url" content="https://www.vidstaload.com" />
+  <meta property="og:title" content="Vidstaload - Download instagram videos and photos" />
+  <meta property="og:description" content="Download instagram videos and photos for free and with just one click!" />
+  <meta property="og:image" content="https://www.vidstaload.com/assets/icon.png" />
+  <meta property="og:image:url" content="https://www.vidstaload.com/assets/icon.png" />
+  <meta property="og:image:secure_url" content="https://www.vidstaload.com/assets/icon.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
 
-    <!-- Analytics -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122354232-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
+  <link href="/build/app.css" rel="stylesheet">
+  <script src="/build/app.js"></script>
 
-      gtag('config', 'UA-122354232-1');
-    </script>
-  </head>
+  <!-- nprogress -->
+  <link rel='stylesheet' href='/assets/css/nprogress.css' />
 
-  <body>
-    <app-root></app-root>
-  </body>
+  <link rel="apple-touch-icon" href="/assets/icon/icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+
+  <!-- Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122354232-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122354232-1');
+  </script>
+  <style>
+    .initial-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    .initial-loading-bar {
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      border-radius: 4px;
+      animation: initial-loading 1s ease-in-out infinite;
+    }
+
+    .initial-loading-bar:nth-child(1) {
+      background-color: #3498db;
+      animation-delay: 0;
+    }
+
+    .initial-loading-bar:nth-child(2) {
+      background-color: #c0392b;
+      animation-delay: 0.09s;
+    }
+
+    .initial-loading-bar:nth-child(3) {
+      background-color: #f1c40f;
+      animation-delay: .18s;
+    }
+
+    .initial-loading-bar:nth-child(4) {
+      background-color: #27ae60;
+      animation-delay: .27s;
+    }
+
+    @keyframes initial-loading {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(1, 2.2);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <app-root>
+    <div class="initial-loading">
+      <div class="initial-loading-bar"></div>
+      <div class="initial-loading-bar"></div>
+      <div class="initial-loading-bar"></div>
+      <div class="initial-loading-bar"></div>
+    </div>
+  </app-root>
+</body>
+
 </html>

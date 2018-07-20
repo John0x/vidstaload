@@ -1,10 +1,11 @@
 import '@ionic/core';
-import { Component, Prop, Listen } from '@stencil/core';
+import 'ionicons';
+import { Component, Listen, Prop } from '@stencil/core';
 import NProgress from 'nprogress';
 
 @Component({
   tag: 'app-root',
-  styleUrl: 'app-root.css'
+  styleUrl: 'app-root.pcss'
 })
 export class AppRoot {
   @Prop({ connect: 'ion-toast-controller' })
@@ -24,7 +25,7 @@ export class AppRoot {
     const toast = await this.toastCtrl.create({
       message: 'New version available',
       showCloseButton: true,
-      closeButtonText: 'Reload',
+      closeButtonText: 'Reload'
     });
     await toast.present();
     await toast.onWillDismiss();
@@ -42,11 +43,27 @@ export class AppRoot {
   render() {
     return (
       <ion-app>
-        <ion-router onIonRouteWillChange={this.onRouteWillChange} onIonRouteDidChange={this.onRouteDidChange} useHash={false}>
+        {/* Header */}
+        <ion-header>
+          <ion-toolbar text-center color="light">
+            <img src="/assets/img/header.png" alt="Vidstaload" margin />
+          </ion-toolbar>
+        </ion-header>
+
+        {/* Router */}
+        <ion-router
+          onIonRouteWillChange={this.onRouteWillChange}
+          onIonRouteDidChange={this.onRouteDidChange}
+          useHash={false}
+        >
           <ion-route url="/" component="app-home" />
           <ion-route url="/about" component="app-about" />
         </ion-router>
-        <ion-nav />
+
+        {/* Content */}
+        <ion-content>
+          <ion-nav />
+        </ion-content>
       </ion-app>
     );
   }
