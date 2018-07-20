@@ -46,7 +46,7 @@ export class AppRoot {
         {/* Header */}
         <ion-header>
           <ion-toolbar text-center color="light">
-            <img src="/assets/img/header.png" alt="Vidstaload" />
+            <img src="/assets/img/header.png" alt="Vidstaload" margin />
           </ion-toolbar>
         </ion-header>
 

@@ -131,6 +131,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface InstaButton {
+
+    }
+  }
+
+  interface HTMLInstaButtonElement extends StencilComponents.InstaButton, HTMLStencilElement {}
+
+  var HTMLInstaButtonElement: {
+    prototype: HTMLInstaButtonElement;
+    new (): HTMLInstaButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    'insta-button': HTMLInstaButtonElement;
+  }
+  interface ElementTagNameMap {
+    'insta-button': HTMLInstaButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'insta-button': JSXElements.InstaButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface InstaButtonAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface InstaSearchbar {
 
     }
