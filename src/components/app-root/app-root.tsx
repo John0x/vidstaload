@@ -1,6 +1,6 @@
 import '@ionic/core';
 import 'ionicons';
-import { Component, Prop, Listen } from '@stencil/core';
+import { Component, Listen, Prop } from '@stencil/core';
 import NProgress from 'nprogress';
 
 @Component({
