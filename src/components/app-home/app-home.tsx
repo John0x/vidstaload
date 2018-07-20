@@ -40,11 +40,12 @@ export class AppHome {
   render() {
     return (
       <div class="full-height full-width full-center">
-        <ion-grid no-margin style={{ width: '100%' }}>
+        <ion-grid no-margin class="full-width">
           <ion-row style={{ justifyContent: 'center' }}>
             <ion-col size-xs="12" size-sm="10" size-md="8" size-lg="6" size-xl="2">
               <div style={{ height: '40px' }}>
                 <insta-searchbar
+                  placeholder="Instagram url"
                   onChange={ev => this.onSearchbarInput(ev)}
                   onPressedEnter={ev => this.onSearchbarPressedEnter(ev)}
                 />
