@@ -12,7 +12,7 @@ export class AppHome {
   render() {
     return (
       <div class="full-height full-width full-center">
-        <ion-grid no-margin style={{ width: "90%" }}>
+        <ion-grid no-margin style={{ width: "50%" }}>
           <ion-row>
             <div style={{ height: "40px", width: "100%"}}>
               <insta-searchbar onPressedEnter={ev => this.onSearchbarPressedEnter(ev)} />
