@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assets/img/header.png" alt="Sublime's custom image"/>
+  <img src="https://raw.githubusercontent.com/John0x/vidstaload/master/src/assets/img/header.PNG" alt="Vidstaload"/>
 </p>
 
 ![Vidstaload-status](https://david-dm.org/john0x/vidstaload.svg) [![Known Vulnerabilities](https://snyk.io/test/github/john0x/vidstaload/badge.svg)](https://snyk.io/test/github/john0x/vidstaload)
