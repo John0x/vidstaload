@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Listen, State } from '@stencil/core';
+import { Component, Event, EventEmitter, Listen, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'insta-searchbar',
@@ -7,6 +7,8 @@ import { Component, Event, EventEmitter, Listen, State } from '@stencil/core';
 })
 export class InstaSearchbar {
   @State() value: string;
+
+  @Prop() placeholder: string;
 
   @Event() pressedEnter: EventEmitter<string>;
   @Event() change: EventEmitter<string>;
@@ -30,7 +32,7 @@ export class InstaSearchbar {
         value={this.value}
         onInput={event => this.handleChange(event)}
         class="search-input"
-        placeholder="Insert url"
+        placeholder={this.placeholder}
       />
     );
   }

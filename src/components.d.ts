@@ -165,7 +165,7 @@ declare global {
 
   namespace StencilComponents {
     interface InstaSearchbar {
-
+      'placeholder': string;
     }
   }
 
@@ -190,6 +190,7 @@ declare global {
     export interface InstaSearchbarAttributes extends HTMLAttributes {
       'onChange'?: (event: CustomEvent<string>) => void;
       'onPressedEnter'?: (event: CustomEvent<string>) => void;
+      'placeholder'?: string;
     }
   }
 }
