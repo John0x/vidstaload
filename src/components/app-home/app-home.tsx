@@ -9,8 +9,16 @@ import to from '../../helpers/await-to';
 export class AppHome {
   @State() searchValue: string;
 
+  @Prop() searchTerm: string;
+
   @Prop({ connect: 'ion-alert-controller' })
   alertCtrl: HTMLIonAlertControllerElement;
+
+  componentDidLoad() {
+    if (this.searchTerm) {
+      this.downloadVideo(this.searchTerm);
+    }
+  }
 
   onSearchbarInput(event: CustomEvent<string>): any {
     this.searchValue = event.detail;
