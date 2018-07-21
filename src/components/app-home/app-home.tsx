@@ -19,12 +19,10 @@ export class AppHome {
       this.downloadVideo(this.searchTerm);
 
       // Track search action
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Actions',
-        eventAction: 'search',
-        eventLabel: 'Searched video',
-        eventValue: this.searchTerm
+      gtag('event', 'search', {
+        'event_category': 'Actions',
+        'event_label': 'Searched Video',
+        'value': this.searchTerm
       });
     }
   }
@@ -78,12 +76,10 @@ export class AppHome {
     downloadElement.click();
 
     // Track the download action
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'Actions',
-      eventAction: 'download',
-      eventLabel: 'Downloaded video',
-      eventValue: url
+    gtag('event', 'download', {
+      'event_category': 'Actions',
+      'event_label': 'Download Video',
+      'value': url
     });
   }
 
