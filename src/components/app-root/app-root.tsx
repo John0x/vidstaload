@@ -23,7 +23,7 @@ export class AppRoot {
   @Listen('window:swUpdate')
   async onSWUpdate() {
     const toast = await this.toastCtrl.create({
-      message: 'New version available',
+      message: 'New version available. Click reload to update',
       showCloseButton: true,
       closeButtonText: 'Reload'
     });
@@ -46,7 +46,7 @@ export class AppRoot {
         {/* Header */}
         <ion-header>
           <ion-toolbar text-center color="light">
-            <img src="/assets/img/header.png" alt="Vidstaload" margin />
+            <img src="/assets/img/header.png" alt="Vidstaload" style={{ height: '40px' }} />
           </ion-toolbar>
         </ion-header>
 

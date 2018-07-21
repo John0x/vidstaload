@@ -1,5 +1,6 @@
-import { Component, State } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import NProgress from 'nprogress';
+import to from '../../helpers/await-to';
 
 @Component({
   tag: 'app-home',
@@ -8,12 +9,25 @@ import NProgress from 'nprogress';
 export class AppHome {
   @State() searchValue: string;
 
+  @Prop({ connect: 'ion-alert-controller' })
+  alertCtrl: HTMLIonAlertControllerElement;
+
   onSearchbarInput(event: CustomEvent<string>): any {
     this.searchValue = event.detail;
   }
 
   onSearchbarPressedEnter(event: CustomEvent<string>) {
     this.downloadVideo(event.detail);
+  }
+
+  async showErrorAlert(message: string) {
+    const alert = await this.alertCtrl.create({
+      header: 'Error',
+      message,
+      buttons: ['OK']
+    });
+
+    return alert.present();
   }
 
   async onDownloadButtonClicked(_event: MouseEvent) {
@@ -24,11 +38,21 @@ export class AppHome {
 
   async downloadVideo(url: string) {
     // fetch website html
-    const response = await fetch(url);
-    const content = await response.text();
+    const result = await to(fetch(url));
+    if (result.error || !result.data.ok) {
+      // failed to fetch site
+      return this.showErrorAlert('Couldnt fetch video. Are you sure the url is correct?');
+    }
+
+    const content = await result.data.text();
 
     // search for the meta tag that contains the download link
     const searchResult = content.match(/<meta.*property="og:video".*content="(.*)".*\/>/);
+    if (!searchResult || searchResult.length === 0) {
+      // failed to find download link
+      return this.showErrorAlert('Failed to retrieve download link. Are you sure this is a video?');
+    }
+
     const videoLink = searchResult[1];
 
     // Create a link to download the file
