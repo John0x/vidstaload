@@ -66,7 +66,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppHome {
-
+      'searchTerm': string;
     }
   }
 
@@ -89,7 +89,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-
+      'searchTerm'?: string;
     }
   }
 }

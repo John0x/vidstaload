@@ -57,6 +57,7 @@ export class AppRoot {
           useHash={false}
         >
           <ion-route url="/" component="app-home" />
+          <ion-route url="/search/:searchTerm" component="app-home" />
           <ion-route url="/about" component="app-about" />
         </ion-router>
 
