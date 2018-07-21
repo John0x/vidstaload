@@ -17,6 +17,15 @@ export class AppHome {
   componentDidLoad() {
     if (this.searchTerm) {
       this.downloadVideo(this.searchTerm);
+
+      // Track search action
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Actions',
+        eventAction: 'search',
+        eventLabel: 'Searched video',
+        eventValue: this.searchTerm
+      });
     }
   }
 
@@ -67,6 +76,15 @@ export class AppHome {
     const downloadElement = document.createElement('a');
     downloadElement.href = `${videoLink}?dl=1`; // append ?dl=1 parameter to download the video instead of opening it
     downloadElement.click();
+
+    // Track the download action
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Actions',
+      eventAction: 'download',
+      eventLabel: 'Downloaded video',
+      eventValue: url
+    });
   }
 
   render() {
