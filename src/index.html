@@ -22,7 +22,7 @@
   <!-- og meta -->
   <meta property="og:url" content="https://www.vidstaload.com" />
   <meta property="og:title" content="Vidstaload - Download instagram videos and photos" />
-  <meta property="og:description" content="Download instagram videos and photos for free and with just one click!" />
+  <meta property="og:description" content="Download instagram videos and photos for free and with just one click! Paste the video URL into the field and hit download!"/>
   <meta property="og:image" content="https://www.vidstaload.com/assets/icon.png" />
   <meta property="og:image:url" content="https://www.vidstaload.com/assets/icon.png" />
   <meta property="og:image:secure_url" content="https://www.vidstaload.com/assets/icon.png" />
@@ -51,8 +51,9 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'UA-122354232-1', { 'anonymize_ip': true });
+    // gtag('config', 'UA-122354232-1', { 'anonymize_ip': true });
   </script>
+
   <style>
     .initial-loading {
       position: absolute;
@@ -112,12 +113,12 @@
     </div>
   </app-root>
 
-  <div itemscope itemtype="http://schema.org/WebSite">
-    <meta itemprop="url" content="https://www.vidstaload.com/"/>
+  <div style="display: none;" itemscope itemtype="http://schema.org/WebSite">
+    <meta itemprop="url" content="https://www.vidstaload.com/" />
     <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
-      <meta itemprop="target" content="https://vidstaload.com/search/{search_term_string}"/>
+      <meta itemprop="target" content="https://vidstaload.com/search/{search_term_string}" />
       <input itemprop="query-input" type="text" name="search_term_string" required/>
-      <input type="submit"/>
+      <input type="submit" />
     </form>
   </div>
 </body>
